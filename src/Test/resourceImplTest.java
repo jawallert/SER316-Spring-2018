@@ -92,7 +92,9 @@ public class resourceImplTest {
 		testRes.removeResource(path);
 		assertFalse(testRes.getAllResourcesCount() >= 1);
 	}
-	
+	/**
+	 * testRemoveProject verifies the project conditional branch of removeResource
+	 */
 	@Test(expected = NullPointerException.class)
 	public void testRemoveProject() {
 		testRes.addResource(path2, false, true);
@@ -101,6 +103,9 @@ public class resourceImplTest {
 		testRes.getResource(path2).getPath();
 	}
 	
+	/**
+	 * testGetXml verifies the getXMLContent
+	 */
 	@Test
 	public void testGetXml() {
 	assertTrue(testRes.getXMLContent() != null);
