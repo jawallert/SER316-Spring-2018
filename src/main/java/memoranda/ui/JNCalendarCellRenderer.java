@@ -18,8 +18,8 @@ import javax.swing.JTable;
 
 import main.java.memoranda.CurrentProject;
 import main.java.memoranda.EventsManager;
-import main.java.memoranda.Task;
 import main.java.memoranda.date.CalendarDate;
+import main.java.memoranda.interfaces.ITask;
 /**
  *
  */
@@ -27,14 +27,14 @@ import main.java.memoranda.date.CalendarDate;
 public class JNCalendarCellRenderer extends javax.swing.table.DefaultTableCellRenderer {
     private CalendarDate d = null;
     boolean disabled = false;
-    ImageIcon evIcon = new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/ui/icons/en.png"));
-    Task t = null;
+    ImageIcon evIcon = new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/main/resources/ui/icons/en.png"));
+    ITask t = null;
     
-    public void setTask(Task _t) {
+    public void setTask(ITask _t) {
         t = _t;
     }
     
-    public Task getTask() {
+    public ITask getTask() {
         return t;
     }
 

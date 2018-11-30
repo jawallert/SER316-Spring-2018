@@ -71,7 +71,7 @@ public class FindDialog extends JDialog {
 		header.setIcon(
 			new ImageIcon(
 				main.java.memoranda.ui.htmleditor.ImageDialog.class.getResource(
-					"/htmleditor/icons/findbig.png")));
+					"/main/resources/htmleditor/icons/findbig.png")));
 		headerPanel.setBackground(Color.WHITE);
 		headerPanel.add(header);
 		this.getContentPane().add(headerPanel, BorderLayout.NORTH);

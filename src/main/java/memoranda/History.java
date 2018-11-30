@@ -20,6 +20,8 @@ import javax.swing.Action;
 import javax.swing.ImageIcon;
 import javax.swing.KeyStroke;
 
+import main.java.memoranda.interfaces.IHistoryListener;
+import main.java.memoranda.interfaces.IProject;
 import main.java.memoranda.util.Local;
 /**
  * 
@@ -99,11 +101,11 @@ public class History {
         return next != null;
     }
 
-    public static void addHistoryListener(HistoryListener hl) {
+    public static void addHistoryListener(IHistoryListener hl) {
         historyListeners.add(hl);
     }
     
-    public static void removeProjectHistory(Project prj) {
+    public static void removeProjectHistory(IProject prj) {
         Vector list = new Vector();
         String id;
         
@@ -132,7 +134,7 @@ public class History {
 
     private static void notifyListeners(HistoryItem n) {
         for (int i = 0; i < historyListeners.size(); i++)            
-                 ((HistoryListener) historyListeners.get(i)).historyWasRolledTo(n);
+                 ((IHistoryListener) historyListeners.get(i)).historyWasRolledTo(n);
     }
 
     public static HistoryBackAction historyBackAction = new HistoryBackAction();
@@ -142,7 +144,7 @@ public class History {
 
         public HistoryBackAction() {
             super(Local.getString("History back"), 
-            new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/ui/icons/hist_back.png")));
+            new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/main/resources/ui/icons/hist_back.png")));
             putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, KeyEvent.ALT_MASK));
             setEnabled(false);
         }
@@ -181,7 +183,7 @@ public class History {
 
         public HistoryForwardAction() {
             super(Local.getString("History forward"), 
-            new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/ui/icons/hist_forward.png")));
+            new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/main/resources/ui/icons/hist_forward.png")));
             putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, KeyEvent.ALT_MASK));
             setEnabled(false);
         }

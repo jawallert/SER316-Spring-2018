@@ -70,7 +70,7 @@ public class AddResourceDialog extends JDialog {
         header.setForeground(new Color(0, 0, 124));
         header.setText(Local.getString("New resource"));
         header.setIcon(new ImageIcon(main.java.memoranda.ui.AddResourceDialog.class.getResource(
-            "/ui/icons/resource48.png")));
+            "/main/resources/ui/icons/resource48.png")));
         dialogTitlePanel.add(header);
         this.getContentPane().add(dialogTitlePanel, BorderLayout.NORTH);
         

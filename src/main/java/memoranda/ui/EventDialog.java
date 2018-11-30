@@ -100,9 +100,9 @@ public class EventDialog extends JDialog implements WindowListener {
         headerPanel.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 5));
         header.setFont(new java.awt.Font("Dialog", 0, 20));
         header.setForeground(new Color(0, 0, 124));
-        header.setText(Local.getString("Event"));
+        header.setText(Local.getString("IEvent"));
         header.setIcon(new ImageIcon(main.java.memoranda.ui.EventDialog.class.getResource(
-            "/ui/icons/event48.png")));
+            "/main/resources/ui/icons/event48.png")));
         headerPanel.add(header);
         
         // Build eventPanel
@@ -224,7 +224,7 @@ public class EventDialog extends JDialog implements WindowListener {
             }
         });
         setStartDateB.setIcon(
-            new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/ui/icons/calendar.png")));
+            new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/main/resources/ui/icons/calendar.png")));
         setStartDateB.setText("");
         setStartDateB.setPreferredSize(new Dimension(24, 24));
 
@@ -303,7 +303,7 @@ public class EventDialog extends JDialog implements WindowListener {
         setEndDateB.setPreferredSize(new Dimension(24, 24));
         setEndDateB.setText("");
         setEndDateB.setIcon(
-            new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/ui/icons/calendar.png")));
+            new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/main/resources/ui/icons/calendar.png")));
         setEndDateB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 setEndDateB_actionPerformed(e);

@@ -83,7 +83,7 @@ public class ReplaceOptionsDialog extends JDialog {
 
     void jbInit() throws Exception {
         this.setResizable(false);
-        textLabel.setIcon(new ImageIcon(main.java.memoranda.ui.htmleditor.HTMLEditor.class.getResource("/htmleditor/icons/findbig.png"))) ;
+        textLabel.setIcon(new ImageIcon(main.java.memoranda.ui.htmleditor.HTMLEditor.class.getResource("/main/resources/htmleditor/icons/findbig.png"))) ;
         textLabel.setIconTextGap(10);
         border1 = BorderFactory.createEmptyBorder(5, 5, 5, 5);
         border2 = BorderFactory.createEmptyBorder();

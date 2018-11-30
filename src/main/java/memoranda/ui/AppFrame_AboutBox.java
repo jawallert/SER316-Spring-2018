@@ -81,7 +81,7 @@ public class AppFrame_AboutBox extends JDialog implements ActionListener {
     
     text += "</html>";
     
-    image = new ImageIcon(AppFrame_AboutBox.class.getResource("/ui/memoranda.png"));
+    image = new ImageIcon(AppFrame_AboutBox.class.getResource("/main/resources/ui/memoranda.png"));
     this.setTitle(Local.getString("About Memoranda"));
     setResizable(false);
     // Initialize Objects

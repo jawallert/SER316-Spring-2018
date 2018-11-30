@@ -1,7 +1,7 @@
 /**
  * TaskTable.java         
  * -----------------------------------------------------------------------------
- * Project           Memoranda
+ * IProject           Memoranda
  * Package           net.sf.memoranda.ui
  * Original author   Alex V. Alishevskikh
  *                   [alexeya@gmail.com]
@@ -51,6 +51,11 @@ import main.java.memoranda.*;
 import main.java.memoranda.date.CalendarDate;
 import main.java.memoranda.date.CurrentDate;
 import main.java.memoranda.date.DateListener;
+import main.java.memoranda.interfaces.INoteList;
+import main.java.memoranda.interfaces.IProject;
+import main.java.memoranda.interfaces.IProjectListener;
+import main.java.memoranda.interfaces.IResourcesList;
+import main.java.memoranda.interfaces.ITaskList;
 import main.java.memoranda.ui.treetable.*;
 import main.java.memoranda.util.*;
 
@@ -108,9 +113,9 @@ public class TaskTable extends JTable {
                 tableChanged();
             }
         });
-        CurrentProject.addProjectListener(new ProjectListener() {
-            public void projectChange(Project p, NoteList nl, TaskList tl,
-                    ResourcesList rl) {
+        CurrentProject.addProjectListener(new IProjectListener() {
+            public void projectChange(IProject p, INoteList nl, ITaskList tl,
+                    IResourcesList rl) {
             }
 
             public void projectWasChanged() {
@@ -154,7 +159,7 @@ public class TaskTable extends JTable {
 		// column name is repeated in 2 places, do something about it!
 		getColumn( "% " + Local.getString("done") ).setCellEditor(new TaskProgressEditor());
 		
-		// TODO: editor for task progress
+		// TODO: editor for iTask progress
 		
 		
 		//  grid.

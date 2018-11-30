@@ -31,7 +31,7 @@ public class App {
 	private JFrame splash = null;
 
 	/*========================================================================*/ 
-	/* Note: Please DO NOT edit the version/build info manually!
+	/* INote: Please DO NOT edit the version/build info manually!
        The actual values are substituted by the Ant build script using 
        'version' property and datestamp.*/
 
@@ -150,7 +150,7 @@ public class App {
 	private void showSplash() {
 		splash = new JFrame();
 		ImageIcon spl =
-			new ImageIcon(App.class.getResource("/ui/splash.png"));
+			new ImageIcon(App.class.getResource("/main/resources/ui/splash.png"));
 		JLabel l = new JLabel();
 		l.setSize(400, 300);
 		l.setIcon(spl);

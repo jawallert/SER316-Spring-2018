@@ -28,8 +28,8 @@ import javax.swing.text.html.HTMLDocument;
 
 import main.java.memoranda.CurrentNote;
 import main.java.memoranda.History;
-import main.java.memoranda.Note;
 import main.java.memoranda.date.CurrentDate;
+import main.java.memoranda.interfaces.INote;
 import main.java.memoranda.ui.htmleditor.HTMLEditor;
 import main.java.memoranda.util.Configuration;
 import main.java.memoranda.util.Context;
@@ -98,7 +98,7 @@ public class EditorPanel extends JPanel {
 	public Action insertTimeAction = new AbstractAction(Local
 			.getString("Insert current time"), new ImageIcon(
 			main.java.memoranda.ui.AppFrame.class
-					.getResource("/ui/icons/time.png"))) {
+					.getResource("/main/resources/ui/icons/time.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			insTimeB_actionPerformed(e);
 		}
@@ -107,7 +107,7 @@ public class EditorPanel extends JPanel {
 	public Action insertDateAction = new AbstractAction(Local
 			.getString("Insert current date"), new ImageIcon(
 			main.java.memoranda.ui.AppFrame.class
-					.getResource("/ui/icons/date.png"))) {
+					.getResource("/main/resources/ui/icons/date.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			insDateB_actionPerformed(e);
 		}
@@ -115,22 +115,22 @@ public class EditorPanel extends JPanel {
 
 	/*
 	 * public Action printAction = new AbstractAction( "Print", new
-	 * ImageIcon(net.sf.memoranda.ui.AppFrame.class.getResource("/ui/icons/print.png"))) {
+	 * ImageIcon(net.sf.memoranda.ui.AppFrame.class.getResource("/main/resources/ui/icons/print.png"))) {
 	 * public void actionPerformed(ActionEvent e) { doPrint(); } };
 	 */
 
-	public Action newAction = new AbstractAction(Local.getString("New note"),
+	public Action newAction = new AbstractAction(Local.getString("New iNote"),
 			new ImageIcon(main.java.memoranda.ui.AppFrame.class
-					.getResource("/ui/icons/filenew.png"))) {
+					.getResource("/main/resources/ui/icons/filenew.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			newB_actionPerformed(e);
 		}
 	};
 
 	public Action exportAction = new AbstractAction(Local
-			.getString("Export note to file"), new ImageIcon(
+			.getString("Export iNote to file"), new ImageIcon(
 			main.java.memoranda.ui.AppFrame.class
-					.getResource("/ui/icons/export.png"))) {
+					.getResource("/main/resources/ui/icons/export.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			exportB_actionPerformed(e);
 		}
@@ -139,16 +139,16 @@ public class EditorPanel extends JPanel {
 	public Action importAction = new AbstractAction(Local
 			.getString("Insert file"), new ImageIcon(
 			main.java.memoranda.ui.AppFrame.class
-					.getResource("/ui/icons/import.png"))) {
+					.getResource("/main/resources/ui/icons/import.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			importB_actionPerformed(e);
 		}
 	};
 
 	public Action previewAction = new AbstractAction(Local
-			.getString("Preview note in browser"), new ImageIcon(
+			.getString("Preview iNote in browser"), new ImageIcon(
 			main.java.memoranda.ui.AppFrame.class
-					.getResource("/ui/icons/preview.png"))) {
+					.getResource("/main/resources/ui/icons/preview.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			previewB_actionPerformed(e);
 		}
@@ -169,7 +169,7 @@ public class EditorPanel extends JPanel {
 		newB.setMinimumSize(new Dimension(24, 24));
 		newB.setPreferredSize(new Dimension(24, 24));
 		newB.setRequestFocusEnabled(false);
-		newB.setToolTipText(Local.getString("New note"));
+		newB.setToolTipText(Local.getString("New iNote"));
 		newB.setBorderPainted(false);
 		newB.setFocusable(false);
 		newB.setText("");
@@ -189,7 +189,7 @@ public class EditorPanel extends JPanel {
 		exportB.setMinimumSize(new Dimension(24, 24));
 		exportB.setPreferredSize(new Dimension(24, 24));
 		exportB.setRequestFocusEnabled(false);
-		exportB.setToolTipText(Local.getString("Export note to file"));
+		exportB.setToolTipText(Local.getString("Export iNote to file"));
 		exportB.setBorderPainted(false);
 		exportB.setFocusable(false);
 		exportB.setText("");
@@ -359,7 +359,7 @@ public class EditorPanel extends JPanel {
 	public void initCSS() {
 		BufferedReader br = new BufferedReader(new InputStreamReader(
 				main.java.memoranda.ui.EditorPanel.class
-						.getResourceAsStream("/ui/css/default.css")));
+						.getResourceAsStream("/main/resources/ui/css/default.css")));
 		String css = "";
 		try {
 			String s = br.readLine();
@@ -433,7 +433,7 @@ public class EditorPanel extends JPanel {
 
 		JFileChooser chooser = new JFileChooser();
 		chooser.setFileHidingEnabled(false);
-		chooser.setDialogTitle(Local.getString("Export note"));
+		chooser.setDialogTitle(Local.getString("Export iNote"));
 		chooser.setAcceptAllFileFilterUsed(false);
 		chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		chooser
@@ -446,7 +446,7 @@ public class EditorPanel extends JPanel {
 			chooser.setCurrentDirectory(new File(lastSel));
 
 		FileExportDialog dlg = new FileExportDialog(App.getFrame(), Local
-				.getString("Export note"), chooser);
+				.getString("Export iNote"), chooser);
 		String enc = (String) Context.get("EXPORT_FILE_ENCODING");
 		if (enc != null)
 			dlg.encCB.setSelectedItem(enc);
@@ -495,14 +495,14 @@ public class EditorPanel extends JPanel {
 
 	String initialTitle = "";
 
-	public void setDocument(Note note) {
-		// Note note = CurrentProject.getNoteList().getActiveNote();
+	public void setDocument(INote iNote) {
+		// INote iNote = CurrentProject.getNoteList().getActiveNote();
 		// try {
-		// this.editor.editor.setPage(CurrentStorage.get().getNoteURL(note));
-		editor.document = (HTMLDocument) CurrentStorage.get().openNote(note);
+		// this.editor.editor.setPage(CurrentStorage.get().getNoteURL(iNote));
+		editor.document = (HTMLDocument) CurrentStorage.get().openNote(iNote);
 		editor.initEditor();
-		if (note != null)
-			titleField.setText(note.getTitle());
+		if (iNote != null)
+			titleField.setText(iNote.getTitle());
 		else
 			titleField.setText("");
 		initialTitle = titleField.getText();
@@ -510,11 +510,11 @@ public class EditorPanel extends JPanel {
 		 * } catch (Exception ex) { new ExceptionDialog(ex); }
 		 */
 		/*
-		 * Document doc = CurrentStorage.get().openNote(note); try {
+		 * Document doc = CurrentStorage.get().openNote(iNote); try {
 		 * this.editor.editor.setText(doc.getText(0, doc.getLength())); } catch
 		 * (Exception ex){ ex.printStackTrace(); }
 		 */
-		// .setDocument(CurrentStorage.get().openNote(note));
+		// .setDocument(CurrentStorage.get().openNote(iNote));
 	}
 
 	public javax.swing.text.Document getDocument() {

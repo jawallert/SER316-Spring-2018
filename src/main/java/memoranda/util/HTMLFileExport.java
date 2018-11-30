@@ -20,7 +20,7 @@ import org.apache.xml.serialize.XMLSerializer;
 import org.cyberneko.html.parsers.SAXParser;
 import org.xml.sax.InputSource;
 
-import main.java.memoranda.Note;
+import main.java.memoranda.interfaces.INote;
 import main.java.memoranda.ui.ExceptionDialog;
 import main.java.memoranda.ui.htmleditor.AltHTMLWriter;
 /**
@@ -32,17 +32,17 @@ public class HTMLFileExport {
     String charset = "";
     File f = null;
     HTMLDocument doc;
-    Note note = null;
+    INote iNote = null;
     boolean xhtml = false;
     boolean num = false;
     String templFile = null;
     /**
      * Constructor for HTMLFileExport.
      */
-    public HTMLFileExport(File f, Document doc, Note note, String charset, boolean num, String templFile, boolean xhtml) {
+    public HTMLFileExport(File f, Document doc, INote iNote, String charset, boolean num, String templFile, boolean xhtml) {
         this.f = f;
         this.doc = (HTMLDocument)doc;
-        this.note = note;
+        this.iNote = iNote;
         this.charset = charset;
         this.num = num;
         this.templFile = templFile;
@@ -111,10 +111,10 @@ public class HTMLFileExport {
      
 	 private String applyTemplate() {
         String body = getNoteBody();        
-		String title = note != null? note.getTitle() : "";
-		String id = note != null? note.getId() : "";
-		String project = note != null? note.getProject().getTitle() : "";
-		String date = note != null? note.getDate().getFullDateString() : "";
+		String title = iNote != null? iNote.getTitle() : "";
+		String id = iNote != null? iNote.getId() : "";
+		String project = iNote != null? iNote.getProject().getTitle() : "";
+		String date = iNote != null? iNote.getDate().getFullDateString() : "";
 		String now = new Date().toString();
 		String templ = getTemplateString(templFile);
 		templ = templ.replaceAll("@CONTENT@", body);

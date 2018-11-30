@@ -75,7 +75,7 @@ public class ExceptionDialog extends JDialog {
     jLabel1.setHorizontalTextPosition(SwingConstants.RIGHT);
     jLabel1.setText("Problem occured");
     jLabel1.setIcon(new ImageIcon(main.java.memoranda.ui.ExceptionDialog.class.getResource(
-            "/ui/icons/error.png")));
+            "/main/resources/ui/icons/error.png")));
         
     jLabel2.setFont(new java.awt.Font("Dialog", 0, 11));
     jLabel2.setText("<html>An internal exception occured. It is may be a result of bug in the " +

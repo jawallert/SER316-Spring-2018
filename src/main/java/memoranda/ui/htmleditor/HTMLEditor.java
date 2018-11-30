@@ -106,7 +106,7 @@ public class HTMLEditor extends JPanel {
 	public Action boldAction =
 		new HTMLEditorAction(
 			Local.getString("Bold"),
-			new ImageIcon(cl.getResource("/htmleditor/icons/bold.png"))) {
+			new ImageIcon(cl.getResource("/main/resources/htmleditor/icons/bold.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			boldActionB_actionPerformed(e);
 		}
@@ -115,7 +115,7 @@ public class HTMLEditor extends JPanel {
 	public Action italicAction =
 		new HTMLEditorAction(
 			Local.getString("Italic"),
-			new ImageIcon(cl.getResource("/htmleditor/icons/italic.png"))) {
+			new ImageIcon(cl.getResource("/main/resources/htmleditor/icons/italic.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			italicActionB_actionPerformed(e);
 		}
@@ -124,7 +124,7 @@ public class HTMLEditor extends JPanel {
 	public Action underAction =
 		new HTMLEditorAction(
 			Local.getString("Underline"),
-			new ImageIcon(cl.getResource("/htmleditor/icons/underline.png"))) {
+			new ImageIcon(cl.getResource("/main/resources/htmleditor/icons/underline.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			underActionB_actionPerformed(e);
 		}
@@ -134,7 +134,7 @@ public class HTMLEditor extends JPanel {
 		new HTMLEditorAction(
 			Local.getString("Unordered list"),
 			new ImageIcon(
-				cl.getResource("/htmleditor/icons/listunordered.png"))) {
+				cl.getResource("/main/resources/htmleditor/icons/listunordered.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			ulActionB_actionPerformed(e);
 		}
@@ -143,7 +143,7 @@ public class HTMLEditor extends JPanel {
 	public Action olAction =
 		new HTMLEditorAction(
 			Local.getString("Ordered list"),
-			new ImageIcon(cl.getResource("/htmleditor/icons/listordered.png"))) {
+			new ImageIcon(cl.getResource("/main/resources/htmleditor/icons/listordered.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			olActionB_actionPerformed(e);
 		}
@@ -152,7 +152,7 @@ public class HTMLEditor extends JPanel {
 	public Action lAlignAction =
 		new HTMLEditorAction(
 			Local.getString("Align left"),
-			new ImageIcon(cl.getResource("/htmleditor/icons/alignleft.png"))) {
+			new ImageIcon(cl.getResource("/main/resources/htmleditor/icons/alignleft.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			lAlignActionB_actionPerformed(e);
 		}
@@ -161,7 +161,7 @@ public class HTMLEditor extends JPanel {
 	public Action cAlignAction =
 		new HTMLEditorAction(
 			Local.getString("Align center"),
-			new ImageIcon(cl.getResource("/htmleditor/icons/aligncenter.png"))) {
+			new ImageIcon(cl.getResource("/main/resources/htmleditor/icons/aligncenter.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			cAlignActionB_actionPerformed(e);
 		}
@@ -170,7 +170,7 @@ public class HTMLEditor extends JPanel {
 	public Action rAlignAction =
 		new HTMLEditorAction(
 			Local.getString("Align right"),
-			new ImageIcon(cl.getResource("/htmleditor/icons/alignright.png"))) {
+			new ImageIcon(cl.getResource("/main/resources/htmleditor/icons/alignright.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			rAlignActionB_actionPerformed(e);
 		}
@@ -183,7 +183,7 @@ public class HTMLEditor extends JPanel {
 	public Action imageAction =
 		new HTMLEditorAction(
 			Local.getString("Insert image"),
-			new ImageIcon(cl.getResource("/htmleditor/icons/image.png"))) {
+			new ImageIcon(cl.getResource("/main/resources/htmleditor/icons/image.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			imageActionB_actionPerformed(e);
 		}
@@ -192,7 +192,7 @@ public class HTMLEditor extends JPanel {
 	public Action tableAction =
 		new HTMLEditorAction(
 			Local.getString("Insert table"),
-			new ImageIcon(cl.getResource("/htmleditor/icons/table.png"))) {
+			new ImageIcon(cl.getResource("/main/resources/htmleditor/icons/table.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			tableActionB_actionPerformed(e);
 		}
@@ -201,7 +201,7 @@ public class HTMLEditor extends JPanel {
 	public Action linkAction =
 		new HTMLEditorAction(
 			Local.getString("Insert hyperlink"),
-			new ImageIcon(cl.getResource("/htmleditor/icons/link.png"))) {
+			new ImageIcon(cl.getResource("/main/resources/htmleditor/icons/link.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			linkActionB_actionPerformed(e);
 		}
@@ -210,7 +210,7 @@ public class HTMLEditor extends JPanel {
 	public Action propsAction =
 		new HTMLEditorAction(
 			Local.getString("Object properties"),
-			new ImageIcon(cl.getResource("/htmleditor/icons/properties.png"))) {
+			new ImageIcon(cl.getResource("/main/resources/htmleditor/icons/properties.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			propsActionB_actionPerformed(e);
 		}
@@ -226,7 +226,7 @@ public class HTMLEditor extends JPanel {
 	public Action insertHRAction =
 		new HTMLEditorAction(
 			Local.getString("Insert horizontal rule"),
-			new ImageIcon(cl.getResource("/htmleditor/icons/hr.png"))) {
+			new ImageIcon(cl.getResource("/main/resources/htmleditor/icons/hr.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			/*
 			 * String elName =
@@ -287,7 +287,7 @@ public class HTMLEditor extends JPanel {
 	public Action insCharAction =
 		new HTMLEditorAction(
 			Local.getString("Insert character"),
-			new ImageIcon(cl.getResource("/htmleditor/icons/char.png"))) {
+			new ImageIcon(cl.getResource("/main/resources/htmleditor/icons/char.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			if (!charTableShow) {
 				addCharTablePanel();
@@ -305,7 +305,7 @@ public class HTMLEditor extends JPanel {
 	public Action findAction =
 		new HTMLEditorAction(
 			Local.getString("Find & Replace"),
-			new ImageIcon(cl.getResource("/htmleditor/icons/find.png"))) {
+			new ImageIcon(cl.getResource("/main/resources/htmleditor/icons/find.png"))) {
 		public void actionPerformed(ActionEvent e) {
 			doFind();
 		}
@@ -545,7 +545,7 @@ public class HTMLEditor extends JPanel {
 
 		cutAction.putValue(
 			Action.SMALL_ICON,
-			new ImageIcon(cl.getResource("/htmleditor/icons/cut.png")));
+			new ImageIcon(cl.getResource("/main/resources/htmleditor/icons/cut.png")));
 		cutAction.putValue(
 			Action.ACCELERATOR_KEY,
 			KeyStroke.getKeyStroke(KeyEvent.VK_X, KeyEvent.CTRL_MASK));
@@ -554,7 +554,7 @@ public class HTMLEditor extends JPanel {
 
 		copyAction.putValue(
 			Action.SMALL_ICON,
-			new ImageIcon(cl.getResource("/htmleditor/icons/copy.png")));
+			new ImageIcon(cl.getResource("/main/resources/htmleditor/icons/copy.png")));
 		copyAction.putValue(
 			Action.ACCELERATOR_KEY,
 			KeyStroke.getKeyStroke(KeyEvent.VK_C, KeyEvent.CTRL_MASK));
@@ -563,7 +563,7 @@ public class HTMLEditor extends JPanel {
 
 		pasteAction.putValue(
 			Action.SMALL_ICON,
-			new ImageIcon(cl.getResource("/htmleditor/icons/paste.png")));
+			new ImageIcon(cl.getResource("/main/resources/htmleditor/icons/paste.png")));
 		pasteAction.putValue(
 			Action.ACCELERATOR_KEY,
 			KeyStroke.getKeyStroke(KeyEvent.VK_V, KeyEvent.CTRL_MASK));
@@ -626,7 +626,7 @@ public class HTMLEditor extends JPanel {
 
 		/*
 		 * jAlignActionB.setIcon( new
-		 * ImageIcon(net.sf.memoranda.ui.htmleditor.HTMLEditor.class.getResource("/htmleditor/icons/alignjust.png")));
+		 * ImageIcon(net.sf.memoranda.ui.htmleditor.HTMLEditor.class.getResource("/main/resources/htmleditor/icons/alignjust.png")));
 		 * jAlignActionB.setMaximumSize(new Dimension(22, 22));
 		 * jAlignActionB.setMinimumSize(new Dimension(22, 22));
 		 * jAlignActionB.setPreferredSize(new Dimension(22, 22));
@@ -908,29 +908,29 @@ public class HTMLEditor extends JPanel {
 		 * jMenuItemUndo.setAction(undoAction); jMenuItemUndo.setText("Undo");
 		 * jMenuItemUndo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z,
 		 * KeyEvent.CTRL_MASK)); jMenuItemUndo.setIcon( new
-		 * ImageIcon(net.sf.memoranda.ui.htmleditor.AppFrame.class.getResource("/htmleditor/icons/undo16.png")));
+		 * ImageIcon(net.sf.memoranda.ui.htmleditor.AppFrame.class.getResource("/main/resources/htmleditor/icons/undo16.png")));
 		 * 
 		 * jMenuItemRedo.setAction(redoAction); jMenuItemRedo.setText("Redo");
 		 * jMenuItemRedo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z,
 		 * KeyEvent.CTRL_MASK + KeyEvent.SHIFT_MASK)); jMenuItemRedo.setIcon(
 		 * new
-		 * ImageIcon(net.sf.memoranda.ui.htmleditor.AppFrame.class.getResource("/htmleditor/icons/redo16.png")));
+		 * ImageIcon(net.sf.memoranda.ui.htmleditor.AppFrame.class.getResource("/main/resources/htmleditor/icons/redo16.png")));
 		 * 
 		 * jMenuItemCut.setAction(cutAction); jMenuItemCut.setText("Cut");
 		 * jMenuItemCut.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X,
 		 * KeyEvent.CTRL_MASK)); jMenuItemCut.setIcon( new
-		 * ImageIcon(net.sf.memoranda.ui.htmleditor.AppFrame.class.getResource("/htmleditor/icons/cut.png")));
+		 * ImageIcon(net.sf.memoranda.ui.htmleditor.AppFrame.class.getResource("/main/resources/htmleditor/icons/cut.png")));
 		 * 
 		 * jMenuItemCopy.setAction(copyAction); jMenuItemCopy.setText("Copy");
 		 * jMenuItemCopy.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C,
 		 * KeyEvent.CTRL_MASK)); jMenuItemCopy.setIcon( new
-		 * ImageIcon(net.sf.memoranda.ui.htmleditor.AppFrame.class.getResource("/htmleditor/icons/copy.png")));
+		 * ImageIcon(net.sf.memoranda.ui.htmleditor.AppFrame.class.getResource("/main/resources/htmleditor/icons/copy.png")));
 		 * 
 		 * jMenuItemPaste.setAction(pasteAction);
 		 * jMenuItemPaste.setText("Paste");
 		 * jMenuItemPaste.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V,
 		 * KeyEvent.CTRL_MASK)); jMenuItemPaste.setIcon( new
-		 * ImageIcon(net.sf.memoranda.ui.htmleditor.AppFrame.class.getResource("/htmleditor/icons/paste.png")));
+		 * ImageIcon(net.sf.memoranda.ui.htmleditor.AppFrame.class.getResource("/main/resources/htmleditor/icons/paste.png")));
 		 * 
 		 * jMenuItemProp.setAction(propsAction);
 		 * jMenuItemProp.setText("Properties"); jMenuItemProp.setIcon(
@@ -1030,7 +1030,7 @@ public class HTMLEditor extends JPanel {
 			setEnabled(false);
 			putValue(
 				Action.SMALL_ICON,
-				new ImageIcon(cl.getResource("/htmleditor/icons/undo16.png")));
+				new ImageIcon(cl.getResource("/main/resources/htmleditor/icons/undo16.png")));
 			putValue(
 				Action.ACCELERATOR_KEY,
 				KeyStroke.getKeyStroke(KeyEvent.VK_Z, KeyEvent.CTRL_MASK));
@@ -1066,7 +1066,7 @@ public class HTMLEditor extends JPanel {
 			setEnabled(false);
 			putValue(
 				Action.SMALL_ICON,
-				new ImageIcon(cl.getResource("/htmleditor/icons/redo16.png")));
+				new ImageIcon(cl.getResource("/main/resources/htmleditor/icons/redo16.png")));
 			putValue(
 				Action.ACCELERATOR_KEY,
 				KeyStroke.getKeyStroke(
@@ -1494,7 +1494,7 @@ public class HTMLEditor extends JPanel {
 		BreakAction() {
 			super(
 				Local.getString("Insert break"),
-				new ImageIcon(cl.getResource("/htmleditor/icons/break.png")));
+				new ImageIcon(cl.getResource("/main/resources/htmleditor/icons/break.png")));
 		}
 		public void actionPerformed(ActionEvent e) {
 			String elName =
@@ -2747,7 +2747,7 @@ public class HTMLEditor extends JPanel {
 			css.loadRules(r, null);
 			/*
 			 * new InputStreamReader(
-			 * net.sf.memoranda.ui.htmleditor.HTMLEditor.class.getResourceAsStream("/htmleditor/css/default.css")),
+			 * net.sf.memoranda.ui.htmleditor.HTMLEditor.class.getResourceAsStream("/main/resources/htmleditor/css/default.css")),
 			 */
 
 		} catch (Exception ex) {

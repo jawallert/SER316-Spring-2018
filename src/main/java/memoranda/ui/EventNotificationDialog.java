@@ -48,7 +48,7 @@ public class EventNotificationDialog extends JFrame {
     }
     timeLabel.setText(time);
     timeLabel.setIcon(new ImageIcon(main.java.memoranda.ui.TaskDialog.class.getResource(
-            "/ui/icons/event48.png")));
+            "/main/resources/ui/icons/event48.png")));
     textLabel.setText(text);
     this.setSize(300,200);
     this.setLocationRelativeTo(null);
@@ -63,7 +63,7 @@ public class EventNotificationDialog extends JFrame {
   }
   void jbInit() throws Exception {
     this.setResizable(false);
-    this.setIconImage(new ImageIcon(EventNotificationDialog.class.getResource("/ui/icons/jnotes16.png")).getImage());
+    this.setIconImage(new ImageIcon(EventNotificationDialog.class.getResource("/main/resources/ui/icons/jnotes16.png")).getImage());
     this.getContentPane().setBackground(new Color(251, 197, 63));
     border2 = BorderFactory.createEmptyBorder(0,30,0,30);
     border3 = BorderFactory.createCompoundBorder(BorderFactory.createEtchedBorder(Color.white,new Color(142, 142, 142)),BorderFactory.createEmptyBorder(0,30,0,30));
@@ -116,7 +116,7 @@ public class EventNotificationDialog extends JFrame {
 		if (Configuration.get("NOTIFY_SOUND").equals("DEFAULT"))
 			url =
 				EventNotificationDialog.class.getResource(
-					"/ui/beep.wav");
+					"/main/resources/ui/beep.wav");
 		else
 			try {
 				url =
@@ -125,7 +125,7 @@ public class EventNotificationDialog extends JFrame {
 			} catch (Exception ex) {
 				url =
 					EventNotificationDialog.class.getResource(
-						"/ui/beep.wav");
+						"/main/resources/ui/beep.wav");
 			}
 		try {
 			AudioClip clip = Applet.newAudioClip(url);
