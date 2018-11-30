@@ -154,7 +154,7 @@ public class ResourceTypePanel extends JPanel {
         dlg.appPanel.argumentsField.setText("$1");
         dlg.iconLabel.setIcon(
             new ImageIcon(
-                main.java.memoranda.ui.AppFrame.class.getResource("/ui/icons/mimetypes/default.png")));
+                main.java.memoranda.ui.AppFrame.class.getResource("/main/resources/ui/icons/mimetypes/default.png")));
         dlg.setVisible(true);
         if (dlg.CANCELLED)
             return;

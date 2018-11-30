@@ -74,7 +74,7 @@ public class LinkDialog extends JDialog {
         header.setText(Local.getString("Insert hyperlink"));
         header.setIcon(new ImageIcon(
             main.java.memoranda.ui.htmleditor.ImageDialog.class.getResource(
-            "/htmleditor/icons/linkbig.png")));
+            "/main/resources/htmleditor/icons/linkbig.png")));
         topPanel.setBackground(Color.WHITE);
         //topPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         topPanel.add(header);

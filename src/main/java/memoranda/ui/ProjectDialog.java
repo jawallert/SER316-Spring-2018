@@ -28,9 +28,9 @@ import javax.swing.border.EtchedBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import main.java.memoranda.Project;
 import main.java.memoranda.ProjectManager;
 import main.java.memoranda.date.CalendarDate;
+import main.java.memoranda.interfaces.IProject;
 import main.java.memoranda.util.CurrentStorage;
 import main.java.memoranda.util.Local;
 
@@ -76,10 +76,10 @@ public class ProjectDialog extends JDialog {
         topPanel.setBackground(Color.WHITE);        
         header.setFont(new java.awt.Font("Dialog", 0, 20));
         header.setForeground(new Color(0, 0, 124));
-        header.setText(Local.getString("Project"));
+        header.setText(Local.getString("IProject"));
         //header.setHorizontalAlignment(SwingConstants.CENTER);
         header.setIcon(new ImageIcon(main.java.memoranda.ui.ProjectDialog.class.getResource(
-            "/ui/icons/project48.png")));
+            "/main/resources/ui/icons/project48.png")));
         topPanel.add(header);
         
         centerPanel.setBorder(new EtchedBorder());
@@ -143,7 +143,7 @@ public class ProjectDialog extends JDialog {
         
         sdButton.setMinimumSize(new Dimension(20, 20));
         sdButton.setPreferredSize(new Dimension(20, 20));
-        sdButton.setIcon(new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/ui/icons/calendar.png")));
+        sdButton.setIcon(new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/main/resources/ui/icons/calendar.png")));
         sdButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 sdButton_actionPerformed(e);
@@ -201,7 +201,7 @@ public class ProjectDialog extends JDialog {
         edButton.setMinimumSize(new Dimension(20, 20));
         edButton.setMaximumSize(new Dimension(20, 20));
         edButton.setPreferredSize(new Dimension(20, 20));
-        edButton.setIcon(new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/ui/icons/calendar.png")));
+        edButton.setIcon(new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/main/resources/ui/icons/calendar.png")));
         edButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 edButton_actionPerformed(e);
@@ -322,7 +322,7 @@ public class ProjectDialog extends JDialog {
         CalendarDate endD = null;
         if (dlg.endDateChB.isSelected())
             endD = new CalendarDate((Date) dlg.endDate.getModel().getValue());
-        Project prj = ProjectManager.createProject(title, startD, endD);
+        IProject prj = ProjectManager.createProject(title, startD, endD);
         /*if (dlg.freezeChB.isSelected())
             prj.freeze();*/
         CurrentStorage.get().storeProjectManager();

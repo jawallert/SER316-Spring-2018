@@ -58,7 +58,7 @@ public class ImageDialog extends JDialog implements WindowListener {
     JLabel jLabel8 = new JLabel();
     String[] aligns = {"left", "right", "top", "middle", "bottom", "absmiddle",
         "texttop", "baseline"}; 
-    // Note: align values are not localized because they are HTML keywords 
+    // INote: align values are not localized because they are HTML keywords 
     public JComboBox alignCB = new JComboBox(aligns);
     JLabel jLabel9 = new JLabel();
     public JTextField urlField = new JTextField();
@@ -93,7 +93,7 @@ public class ImageDialog extends JDialog implements WindowListener {
         header.setText(Local.getString("Image"));
         header.setIcon(new ImageIcon(
                 main.java.memoranda.ui.htmleditor.ImageDialog.class.getResource(
-                        "/htmleditor/icons/imgbig.png")));
+                        "/main/resources/htmleditor/icons/imgbig.png")));
         headerPanel.add(header);
         this.getContentPane().add(headerPanel, BorderLayout.NORTH);
 
@@ -120,7 +120,7 @@ public class ImageDialog extends JDialog implements WindowListener {
         browseB.setPreferredSize(new Dimension(25, 25));
         browseB.setIcon(new ImageIcon(
                 main.java.memoranda.ui.htmleditor.ImageDialog.class.getResource(
-                        "/htmleditor/icons/fileopen16.png")));
+                        "/main/resources/htmleditor/icons/fileopen16.png")));
         browseB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 browseB_actionPerformed(e);

@@ -8,8 +8,8 @@ import java.io.File;
 import java.util.Iterator;
 import java.util.Vector;
 
-import main.java.memoranda.Project;
 import main.java.memoranda.ProjectManager;
+import main.java.memoranda.interfaces.IProject;
 import nu.xom.Attribute;
 import nu.xom.DocType;
 import nu.xom.Document;
@@ -63,7 +63,7 @@ public class TaskListVersioning {
             String[] projectIds = new String[projects.size()];
             int c = 0;
             for (Iterator iter = projects.iterator(); iter.hasNext();) {
-                Project prj = (Project) iter.next();
+                IProject prj = (IProject) iter.next();
                 projectIds[c++] = prj.getID();
             }
             
@@ -86,7 +86,7 @@ public class TaskListVersioning {
             Document doc = FileStorage.openDocument(filePath);
                         
             Element root = doc.getRootElement();
-            Elements tasks = root.getChildElements("task");
+            Elements tasks = root.getChildElements("iTask");
                         
             for (int j = 0; j < tasks.size(); j++) {                                
                 Element task = tasks.get(j );
@@ -95,11 +95,11 @@ public class TaskListVersioning {
 //	in case we need it later. Ryan
 //                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 //
-//                Attribute startDateAttr = task.getAttribute("startDate");
+//                Attribute startDateAttr = iTask.getAttribute("startDate");
 //                Date startDate = (new CalendarDate(startDateAttr.getValue(),"/")).getDate();
 //                startDateAttr.setValue(sdf.format(startDate));
 //
-//                Attribute endDateAttr = task.getAttribute("endDate");
+//                Attribute endDateAttr = iTask.getAttribute("endDate");
 //                if (endDateAttr != null) {
 //                    Date endDate = (new CalendarDate(endDateAttr.getValue(),"/")).getDate();
 //                    endDateAttr.setValue(sdf.format(endDate));                    
@@ -110,7 +110,7 @@ public class TaskListVersioning {
             		// no parent, do nothing here
             	}
             	else {
-                	// put the task under the parent task
+                	// put the iTask under the parent iTask
                     String parentId = parentAttr.getValue();
                     for (int k = 0; k < tasks.size(); k++) {
                         Element potentialParent = tasks.get(k);

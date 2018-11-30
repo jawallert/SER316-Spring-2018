@@ -211,7 +211,7 @@ public class StickerDialog extends JDialog {
 		header.setForeground(new Color(0, 0, 124));
 		header.setText(Local.getString("Sticker"));
 		header.setIcon(new ImageIcon(main.java.memoranda.ui.StickerDialog.class.getResource(
-            "/ui/icons/sticker48.png")));
+            "/main/resources/ui/icons/sticker48.png")));
 		//header.setHorizontalAlignment(SwingConstants.LEFT);
 
 		jLabel1.setText(Local.getString("Sticker color")+": ");

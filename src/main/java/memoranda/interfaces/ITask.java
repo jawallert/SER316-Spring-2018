@@ -1,12 +1,12 @@
 /**
- * Task.java
+ * ITask.java
  * Created on 11.02.2003, 16:39:13 Alex
  * Package: net.sf.memoranda
  * 
  * @author Alex V. Alishevskikh, alex@openmechanics.net
  * Copyright (c) 2003 Memoranda Team. http://memoranda.sf.net
  */
-package main.java.memoranda;
+package main.java.memoranda.interfaces;
 
 import java.util.Collection;
 
@@ -15,8 +15,8 @@ import main.java.memoranda.date.CalendarDate;
 /**
  * 
  */
-/*$Id: Task.java,v 1.9 2005/06/16 04:21:32 alexeya Exp $*/
-public interface Task {
+/*$Id: ITask.java,v 1.9 2005/06/16 04:21:32 alexeya Exp $*/
+public interface ITask {
     
     public static final int SCHEDULED = 0;
 
@@ -63,12 +63,12 @@ public interface Task {
     
     /*Collection getDependsFrom();
     
-    void addDependsFrom(Task task);
+    void addDependsFrom(ITask iTask);
     
-    void removeDependsFrom(Task task);*/
+    void removeDependsFrom(ITask iTask);*/
             
     Collection getSubTasks();    
-    Task getSubTask(String id);
+    ITask getSubTask(String id);
     
     boolean hasSubTasks(String id);
     
@@ -78,7 +78,7 @@ public interface Task {
     void setDescription(String description);
     String getDescription();
 
-    Task getParentTask();
+    ITask getParentTask();
     String getParentId();
     
     void freeze();

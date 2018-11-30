@@ -176,7 +176,7 @@ public class TaskDialog extends JDialog {
         header.setForeground(new Color(0, 0, 124));
         header.setText(Local.getString("To do"));
         header.setIcon(new ImageIcon(main.java.memoranda.ui.TaskDialog.class.getResource(
-            "/ui/icons/task48.png")));
+            "/main/resources/ui/icons/task48.png")));
         
         GridBagLayout gbLayout = (GridBagLayout) jPanel8.getLayout();
         jPanel8.setBorder(border3);
@@ -256,7 +256,7 @@ public class TaskDialog extends JDialog {
         setStartDateB.setPreferredSize(new Dimension(24, 24));
         setStartDateB.setText("");
         setStartDateB.setIcon(
-            new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/ui/icons/calendar.png")));
+            new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/main/resources/ui/icons/calendar.png")));
         setStartDateB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 setStartDateB_actionPerformed(e);
@@ -303,7 +303,7 @@ public class TaskDialog extends JDialog {
         setEndDateB.setPreferredSize(new Dimension(24, 24));
         setEndDateB.setText("");
         setEndDateB.setIcon(
-            new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/ui/icons/calendar.png")));
+            new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/main/resources/ui/icons/calendar.png")));
         setEndDateB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 setEndDateB_actionPerformed(e);
@@ -312,7 +312,7 @@ public class TaskDialog extends JDialog {
         
         setNotifB.setText(Local.getString("Set notification"));
         setNotifB.setIcon(
-            new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/ui/icons/notify.png")));
+            new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/main/resources/ui/icons/notify.png")));
         setNotifB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 setNotifB_actionPerformed(e);

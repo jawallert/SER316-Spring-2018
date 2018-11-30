@@ -91,7 +91,7 @@ public class TableDialog extends JDialog {
 		header.setText(Local.getString("Table"));
 		header.setIcon(new ImageIcon(
 				main.java.memoranda.ui.htmleditor.ImageDialog.class.getResource(
-				"/htmleditor/icons/tablebig.png")));
+				"/main/resources/htmleditor/icons/tablebig.png")));
 		headerPanel.add(header);
 		this.getContentPane().add(headerPanel, BorderLayout.NORTH);
 		
@@ -192,7 +192,7 @@ public class TableDialog extends JDialog {
 		});
 		bgColorB.setIcon(new ImageIcon(
 			main.java.memoranda.ui.htmleditor.ImageDialog.class.getResource(
-			"/htmleditor/icons/color.png")));
+			"/main/resources/htmleditor/icons/color.png")));
 		bgColorB.setPreferredSize(new Dimension(25, 25));
 		gbc.gridx = 5; gbc.gridy = 3;
 		gbc.gridwidth = 2;

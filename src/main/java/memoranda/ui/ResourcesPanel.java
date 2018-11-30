@@ -60,7 +60,7 @@ public class ResourcesPanel extends JPanel {
         toolBar.setFloatable(false);
         this.setLayout(borderLayout1);
         newResB.setIcon(
-            new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/ui/icons/addresource.png")));
+            new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/main/resources/ui/icons/addresource.png")));
         newResB.setEnabled(true);
         newResB.setMaximumSize(new Dimension(24, 24));
         newResB.setMinimumSize(new Dimension(24, 24));
@@ -90,7 +90,7 @@ public class ResourcesPanel extends JPanel {
         removeResB.setMaximumSize(new Dimension(24, 24));
         removeResB.setIcon(
             new ImageIcon(
-                main.java.memoranda.ui.AppFrame.class.getResource("/ui/icons/removeresource.png")));
+                main.java.memoranda.ui.AppFrame.class.getResource("/main/resources/ui/icons/removeresource.png")));
         removeResB.setEnabled(false);
         scrollPane.getViewport().setBackground(Color.white);
         toolBar.addSeparator(new Dimension(8, 24));
@@ -123,7 +123,7 @@ public class ResourcesPanel extends JPanel {
         refreshB.setMaximumSize(new Dimension(24, 24));
         refreshB.setEnabled(true);
         refreshB.setIcon(
-            new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/ui/icons/refreshres.png")));
+            new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/main/resources/ui/icons/refreshres.png")));
         resPPMenu.setFont(new java.awt.Font("Dialog", 1, 10));
     ppRun.setFont(new java.awt.Font("Dialog", 1, 11));
     ppRun.setText(Local.getString("Open resource")+"...");
@@ -141,7 +141,7 @@ public class ResourcesPanel extends JPanel {
                 ppRemoveRes_actionPerformed(e);
             }
         });
-    ppRemoveRes.setIcon(new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/ui/icons/removeresource.png")));
+    ppRemoveRes.setIcon(new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/main/resources/ui/icons/removeresource.png")));
     ppRemoveRes.setEnabled(false);
     ppNewRes.setFont(new java.awt.Font("Dialog", 1, 11));
     ppNewRes.setText(Local.getString("New resource")+"...");
@@ -150,7 +150,7 @@ public class ResourcesPanel extends JPanel {
                 ppNewRes_actionPerformed(e);
             }
         });
-    ppNewRes.setIcon(new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/ui/icons/addresource.png")));
+    ppNewRes.setIcon(new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/main/resources/ui/icons/addresource.png")));
 
     ppRefresh.setFont(new java.awt.Font("Dialog", 1, 11));
     ppRefresh.setText(Local.getString("Refresh"));
@@ -159,7 +159,7 @@ public class ResourcesPanel extends JPanel {
         ppRefresh_actionPerformed(e);
       }
     });
-    ppRefresh.setIcon(new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/ui/icons/refreshres.png")));
+    ppRefresh.setIcon(new ImageIcon(main.java.memoranda.ui.AppFrame.class.getResource("/main/resources/ui/icons/refreshres.png")));
 
     toolBar.add(newResB, null);
         toolBar.add(removeResB, null);

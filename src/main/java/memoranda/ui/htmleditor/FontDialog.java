@@ -90,7 +90,7 @@ public class FontDialog extends JDialog {
 		header.setText(Local.getString("Text properties"));
 		header.setIcon(new ImageIcon(
 			main.java.memoranda.ui.htmleditor.ImageDialog.class.getResource(
-			"/htmleditor/icons/fontbig.png")));
+			"/main/resources/htmleditor/icons/fontbig.png")));
 		headerPanel.add(header);
 		this.getContentPane().add(headerPanel, BorderLayout.NORTH);
 		        
@@ -145,7 +145,7 @@ public class FontDialog extends JDialog {
 		});
 		colorB.setIcon(new ImageIcon(
 			main.java.memoranda.ui.htmleditor.FontDialog.class.getResource(
-			"/htmleditor/icons/color.png")));
+			"/main/resources/htmleditor/icons/color.png")));
 		colorB.setPreferredSize(new Dimension(25, 25));
 		gbc = new GridBagConstraints();
 		gbc.gridx = 2; gbc.gridy = 1;

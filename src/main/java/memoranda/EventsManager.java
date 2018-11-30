@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.Vector;
 
 import main.java.memoranda.date.CalendarDate;
+import main.java.memoranda.interfaces.IEvent;
 import main.java.memoranda.util.CurrentStorage;
 import main.java.memoranda.util.Util;
 
@@ -86,7 +87,7 @@ public class EventsManager {
 			}
 		}
 	}
-
+	/*
 	public static boolean isNREventsForDate(CalendarDate date) {
 		Day d = getDay(date);
 		if (d == null)
@@ -95,7 +96,16 @@ public class EventsManager {
 			return true;
 		return false;
 	}
-
+	*/
+	
+    public static boolean isNREventsForDate(CalendarDate date) {
+        Day d = getDay(date);
+        if (d == null)
+            return false;
+        if (d.getElement().getChildElements("event").size() > 0)
+            return true;
+        return false;
+    }
 	public static Collection getEventsForDate(CalendarDate date) {
 		Vector v = new Vector();
 		Day d = getDay(date);
@@ -112,7 +122,7 @@ public class EventsManager {
 		return v;
 	}
 
-	public static Event createEvent(
+	public static IEvent createEvent(
 		CalendarDate date,
 		int hh,
 		int mm,
@@ -129,7 +139,7 @@ public class EventsManager {
 		return new EventImpl(el);
 	}
 
-	public static Event createRepeatableEvent(
+	public static IEvent createRepeatableEvent(
 		int type,
 		CalendarDate startDate,
 		CalendarDate endDate,
@@ -174,7 +184,7 @@ public class EventsManager {
 		Vector reps = (Vector) getRepeatableEvents();
 		Vector v = new Vector();
 		for (int i = 0; i < reps.size(); i++) {
-			Event ev = (Event) reps.get(i);
+			IEvent ev = (IEvent) reps.get(i);
 			
 			// --- ivanrise
 			// ignore this event if it's a 'only working days' event and today is weekend.
@@ -224,7 +234,7 @@ public class EventsManager {
 		return getEventsForDate(CalendarDate.today());
 	}
 
-	public static Event getEvent(CalendarDate date, int hh, int mm) {
+	public static IEvent getEvent(CalendarDate date, int hh, int mm) {
 		Day d = getDay(date);
 		if (d == null)
 			return null;
@@ -246,7 +256,7 @@ public class EventsManager {
 			d.getElement().removeChild(getEvent(date, hh, mm).getContent());
 	}
 
-	public static void removeEvent(Event ev) {
+	public static void removeEvent(IEvent ev) {
 		ParentNode parent = ev.getContent().getParent();
 		parent.removeChild(ev.getContent());
 	}
@@ -406,7 +416,7 @@ public class EventsManager {
 		}
 
 		/*
-		 * public Note getNote() { return new NoteImpl(dEl);
+		 * public INote getNote() { return new NoteImpl(dEl);
 		 */
 
 		public Element getElement() {
@@ -419,7 +429,7 @@ public class EventsManager {
 		private static Vector keys = null;
 
 		private static int toMinutes(Object obj) {
-			Event ev = (Event) obj;
+			IEvent ev = (IEvent) obj;
 			return ev.getHour() * 60 + ev.getMinute();
 		}
 
