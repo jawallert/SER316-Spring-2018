@@ -101,6 +101,7 @@ public class ResourcesListImpl implements IResourcesList {
         Elements rs = _root.getChildElements("resource");
         for (int i = 0; i < rs.size(); i++)
             if (rs.get(i).getAttribute("path").getValue().equals(path)) {
+            	System.out.println("first");
             	if(getResource(path).isProjectFile()) {
             		File f = new File(path);
             		System.out.println("[DEBUG] Removing file "+path);
